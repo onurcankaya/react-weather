@@ -8,14 +8,13 @@ export default class About extends Component {
 
     if (location.length > 0 && typeof location === 'string') {
       this.refs.location.value = '';
-      this.props.onSearch(location);      
+      this.props.onSearch(location);
     }
   }
 
   render() {
     return (
       <div>
-        <h3>Get Weather</h3>
         <form onSubmit={this.onFormSubmit.bind(this)}>
           <input type='text' placeholder='Enter city name' ref='location' />
           <button>Get Weather</button>
