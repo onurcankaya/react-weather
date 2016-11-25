@@ -16,7 +16,7 @@ export default class About extends Component {
     return (
       <div>
         <form onSubmit={this.onFormSubmit.bind(this)}>
-          <input type='text' placeholder='Enter city name' ref='location' />
+          <input type='text' placeholder='Search weather by city' ref='location' />
           <button className="button expanded hollow">Get Weather</button>
         </form>
       </div>

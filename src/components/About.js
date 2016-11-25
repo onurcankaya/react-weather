@@ -3,7 +3,7 @@ import React from 'react';
 export default (props) => {
   return (
     <div>
-      <h2 className="text-center">About</h2>
+      <h1 className="text-center page-title">About</h1>
       <p>This is a weather application built using React and Open Weather Map API</p>
       <ul>
         <li>
