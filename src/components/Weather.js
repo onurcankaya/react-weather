@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import WeatherForm from './WeatherForm';
 import WeatherMessage from './WeatherMessage';
 import ErrorModal from './ErrorModal';
@@ -18,7 +19,9 @@ export default class Weather extends Component {
 
     this.setState({
       isLoading: true,
-      errorMessage: null
+      errorMessage: null,
+      location: null,
+      temp: null
     });
 
     fetchWeather(location).then(function (temp) {
@@ -33,6 +36,24 @@ export default class Weather extends Component {
         errorMessage: e.message
       });
     });
+  }
+
+  componentDidMount() {
+    let location = this.props.location.query.location;
+
+    if (location && location.length > 0) {
+      this.handleSearch(location);
+      browserHistory.push('/');
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    let location = newProps.location.query.location;
+
+    if (location && location.length > 0) {
+      this.handleSearch(location);
+      browserHistory.push('/');
+    }
   }
 
   render() {

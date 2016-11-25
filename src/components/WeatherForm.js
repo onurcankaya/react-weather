@@ -6,7 +6,7 @@ export default class About extends Component {
 
     let location = this.refs.location.value;
 
-    if (location.length > 0 && typeof location === 'string') {
+    if (location.length > 0) {
       this.refs.location.value = '';
       this.props.onSearch(location);
     }
