@@ -11,7 +11,7 @@ import foundation from 'style!css!foundation-sites/dist/foundation.min.css';
 $(document).foundation();
 
 // CSS
-import css from 'style!css!../style/style.css';
+import css from 'style!css!sass!../style/style.scss';
 
 ReactDOM.render(
   <Router history={browserHistory}>
